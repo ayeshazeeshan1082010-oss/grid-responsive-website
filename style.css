@@ -26,6 +26,29 @@ h4 {
   letter-spacing: 0.3px;
 }
 
+.btn {
+    background-color: #2e2a26;
+    color: #faf7f2;
+    border: none;
+    padding: 16px 38px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b8935a;
+    transform: translateY(-2px);
+}
+
 /* ===== CONTAINER (this fixes "corner" problem) ===== */
 .container {
   max-width: 1200px;
@@ -87,41 +110,61 @@ h4 {
   gap: 38px;
 }
 
+
 .nav a {
-  color: #4a423a;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 500;
+    color: #4a423a;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+/* Hover pe gold color */
 .nav a:hover {
-  color: #b8935a;
+    color: #b8935a;
+}
+
+/* Hover pe neeche chhoti gold line */
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1.5px;
+    background-color: #b8935a;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
 }
 
 .btn-header {
-  background-color: #2e2a26;
-  color: #faf7f2;
-  border: none;
-  padding: 12px 28px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 2px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
+    background-color: #2e2a26;
+    color: #faf7f2;
+    border: none;
+    padding: 12px 28px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .btn-header:hover {
-  background-color: #b8935a;
+    background-color: #b8935a;
 }
-
 /* ===== BUTTONS ===== */
 .btn {
   background-color: #2e2a26;
@@ -142,22 +185,27 @@ h4 {
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: #2e2a26;
-  border: 1px solid #2e2a26;
-  padding: 15px 36px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 2px;
+    background-color: transparent;
+    color: #2e2a26;
+    border: 1px solid #2e2a26;
+    padding: 15px 36px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background-color: #2e2a26;
-  color: #faf7f2;
+    background-color: #2e2a26;
+    color: #faf7f2;
+    transform: translateY(-2px);
 }
 
 /* ===== HERO SECTION ===== */
@@ -269,11 +317,13 @@ h4 {
 }
 
 .hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: slowZoom 4s ease-in-out infinite alternate;
 }
+
 /* ===== SECTION HEAD (shared) ===== */
 .section-head {
   text-align: center;
@@ -315,28 +365,36 @@ h4 {
 }
 
 .class-card {
-  background-color: #faf7f2;
-  border: 1px solid #e8e0d3;
-  padding: 38px 28px;
-  display: grid;
-  gap: 14px;
-  transition: 0.3s;
+    background-color: #faf7f2;
+    border: 1px solid #e8e0d3;
+    padding: 38px 28px;
+    display: grid;
+    gap: 14px;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .class-card:hover {
-  border-color: #b8935a;
-  transform: translateY(-5px);
+    border-color: #b8935a;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(46, 42, 38, 0.08);
 }
 
 .class-icon {
-  width: 60px;
-  height: 60px;
-  background-color: #ede4d3;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  margin-bottom: 8px;
-  color: #b8935a;
+    width: 60px;
+    height: 60px;
+    background-color: #ede4d3;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    color: #b8935a;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.class-card:hover .class-icon {
+    background-color: #b8935a;
+    color: #ffffff;
+    transform: rotate(-6deg) scale(1.05);
 }
 
 .class-icon i {
@@ -366,19 +424,21 @@ h4 {
 }
 
 .card-link {
-  color: #b8935a;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 10px;
-  display: inline-block;
+    color: #b8935a;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 12px;
+    display: inline-block;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
 }
 
 .card-link:hover {
-  color: #2e2a26;
+    color: #2e2a26;
+    letter-spacing: 2.5px;
 }
 
 /* ===== TRAINERS SECTION ===== */
@@ -394,34 +454,36 @@ h4 {
 }
 
 .trainer-card {
-  background-color: #ffffff;
-  border: 1px solid #e8e0d3;
-  padding: 28px;
-  text-align: center;
-  transition: 0.3s;
+    background-color: #ffffff;
+    border: 1px solid #e8e0d3;
+    padding: 28px;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .trainer-card:hover {
-  border-color: #b8935a;
+    border-color: #b8935a;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(46, 42, 38, 0.08);
 }
 
 .trainer-photo {
-  height: 240px;
-  background-color: #ede4d3;
-  overflow: hidden;
-  margin-bottom: 20px;
+    height: 240px;
+    background-color: #ede4d3;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .trainer-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: 0.4s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .trainer-card:hover .trainer-photo img {
-  transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .trainer-card h3 {
@@ -452,20 +514,20 @@ h4 {
 }
 
 .plan-card {
-  background-color: #faf7f2;
-  border: 1px solid #e8e0d3;
-  padding: 46px 38px;
-  display: grid;
-  gap: 24px;
-  align-content: start;
-  position: relative;
-  transition: 0.3s;
+    background-color: #faf7f2;
+    border: 1px solid #e8e0d3;
+    padding: 46px 38px;
+    display: grid;
+    gap: 24px;
+    align-content: start;
+    position: relative;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan-card.featured {
-  background-color: #2e2a26;
-  color: #faf7f2;
-  border: 1px solid #b8935a;
+.plan-card:hover {
+    border-color: #b8935a;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(46, 42, 38, 0.08);
 }
 
 .plan-tag {
@@ -516,11 +578,20 @@ h4 {
 }
 
 .plan-list li {
-  font-family: Arial, sans-serif;
-  font-size: 14.5px;
-  color: #6b6154;
-  padding-left: 26px;
-  position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 14.5px;
+    color: #6b6154;
+    padding-left: 26px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.plan-card:hover .plan-list li {
+    color: #2e2a26;
+}
+
+.plan-card.featured:hover .plan-list li {
+    color: #2e2a26;
 }
 
 .plan-list li::before {
@@ -530,10 +601,6 @@ h4 {
   color: #b8935a;
   font-weight: bold;
   font-size: 15px;
-}
-
-.plan-card.featured .plan-list li {
-  color: #d8d0c2;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -829,15 +896,15 @@ h4 {
 }
 
 .footer-list a {
-  color: #a89d8c;
-  text-decoration: none;
-  transition: 0.3s;
+    color: #a89d8c;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .footer-list a:hover {
-  color: #b8935a;
+    color: #b8935a;
+    padding-left: 5px;
 }
-
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr auto;
